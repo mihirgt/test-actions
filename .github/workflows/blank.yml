@@ -1,5 +1,4 @@
-name: Jira Webhook Trigger
-
+name: blank
 on:
   repository_dispatch:
     types: [jira-event]
