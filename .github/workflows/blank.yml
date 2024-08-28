@@ -1,6 +1,6 @@
 name: blank
 on:
-  repository_dispatch:
+  workflow_dispatch:
     types: [jira-event]
 
 jobs:
