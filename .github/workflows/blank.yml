@@ -1,17 +1,17 @@
 name: blank
 on:
   workflow_dispatch:
-    types: [jira-event]
+    inputs:
+      cluster:
+        description: 'cluster name'
+        required: true
 
 jobs:
   process_jira_payload:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
       - name: Print Jira Payload
         env:
-          JIRA_PAYLOAD: ${{ toJson(github.event.client_payload) }}
+          JIRA_PAYLOAD: ${{ inputs.cluster }}
         run: |
           echo "Received payload: $JIRA_PAYLOAD"
